@@ -7,6 +7,10 @@
   include_vars: "{{ ansible_os_family }}_8.yml"
   when: citus_major_version|string is match('^8\.[0-9][0-9.]*')
 
+- name: Include OS family specific variables for Citus 11
+  include_vars: "{{ ansible_os_family }}_11.yml"
+  when: citus_major_version|string is match('^11\.[0-9][0-9.]*')
+
 - name: Include OS specific tasks
   include_tasks: "{{ ansible_os_family }}.yml"
 

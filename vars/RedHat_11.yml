@@ -1,0 +1,10 @@
+---
+citus_packages:
+  - postgresql14-server
+  - postgresql14
+  - "citus{{ citus_major_version | regex_replace('\\.') }}_11"
+
+postgresql_service: postgresql-14
+postgresql_setup_path: /usr/pgsql-14/bin/postgresql-14-setup
+postgresql_data_path: /var/lib/pgsql/14/data
+postgresql_conf_path: "{{ postgresql_data_path }}"
