@@ -92,6 +92,8 @@
 - name: Restart postgresql if needed
   meta: flush_handlers
 
+##### Starting configuration Citus
+
 - name: Get a list of postgresql extension
   shell: psql -c "SELECT * FROM pg_extension;"
   args:
